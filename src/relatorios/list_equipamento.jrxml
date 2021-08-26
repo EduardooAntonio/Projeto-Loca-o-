@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="list_equipamento" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="039ac0ad-531f-4ff7-9433-1907e68acc68">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Jeemlocacoes"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT e.descricao, e.valor, e.id, te.descricao as tipo_equipamento
+FROM equipamento e, tipo_equipamento te
+WHERE e.id = te.id]]>
+	</queryString>
+	<field name="descricao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="descricao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipamento"/>
+	</field>
+	<field name="valor" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="valor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipamento"/>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipamento"/>
+	</field>
+	<field name="tipo_equipamento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipo_equipamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_equipamento"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="0" width="170" height="30" uuid="488af54b-0a96-42af-8c7a-b674218353a0"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[JEEM Locações]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="30" width="210" height="30" uuid="9bcfa925-2b66-46ca-9d4f-39d3f906510f"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Listagem Equipamento]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="30" height="30" uuid="e26a3c21-5ee5-4956-8863-6f429bcde03b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24752716-360b-41ae-a50c-3bd0f3f84bb1"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="0" width="260" height="30" uuid="f6f4168c-7145-4fe4-8dd1-d5b743e89915">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7259939-b1d4-4d8b-befa-f12f2f2245a1"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="170" height="30" uuid="22badc3c-0fc9-479d-a433-9a97a832a6f6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4603e58e-5d3d-4858-a4a6-b5203e31ec43"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Tipo Equipamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="92" height="30" uuid="4e54bf0a-4766-4973-8f7e-c201df35d426">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5258408-8697-4d44-ac0e-928ed5733d48"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="30" height="30" uuid="7cc0bc14-152e-4197-a996-be9d23a72883">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24752716-360b-41ae-a50c-3bd0f3f84bb1"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="260" height="30" uuid="a3487911-6cb5-4370-a959-75dc3c188b86">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7259939-b1d4-4d8b-befa-f12f2f2245a1"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="92" height="30" uuid="a0fd32db-96ea-4fd3-b938-272886ef6a70">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5258408-8697-4d44-ac0e-928ed5733d48"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="0" width="168" height="30" uuid="a4f3867c-b279-4a65-a5e1-412c1678f40f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5a560ad2-33a6-4603-a743-23b728883dc5"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo_equipamento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="71" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="30" width="100" height="30" uuid="d1404f78-9aba-4cd8-9c0e-64cc1102b07e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="30" width="65" height="30" uuid="8ccb2f1b-da33-4446-8329-1edaf3988ff3"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
